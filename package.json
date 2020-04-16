@@ -12,6 +12,7 @@
     "cesium": "^1.66.0",
     "craco-cesium": "^1.1.1",
     "craco-plugin-react-hot-reload": "^0.1.0",
+    "env-cmd": "^10.1.0",
     "lodash": "^4.17.15",
     "mapbox-gl": "^1.5.0",
     "material-ui-icons": "^1.0.0-beta.36",
