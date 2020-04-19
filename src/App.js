@@ -18,8 +18,12 @@ let geoJsonCompletedTemplateUkSensors;
 class App extends Component {
     constructor(props) {
         super(props);
-        let App_name = process.env.REACT_APP_NAME ? process.env.REACT_APP_NAME : "Nothing"
+
+        let App_name = process.env.REACT_APP_USR_NAME
+        let walkingStep = process.env.REACT_APP_WALKING_STEP
         console.log(App_name)
+        console.log(walkingStep)
+
         let geoJsonCompletedTemplateKSensors = GeoJsonFirstCompleter("Known Sensor", outdoorPollutantData); // This line is for updating the property of each sensor (26 sensors) with id, name and so on
         geoJsonCompletedTemplateUkSensors = GeoJsonFirstCompleter("AirQ:", outdoorSensorsData); // This line fill up properties for 5 unknown locations (Real monitoring stations)
 

@@ -35,9 +35,9 @@
     "webfontloader": "^1.6.28"
   },
   "scripts": {
-    "start": "env-cmd -f ./.env.development craco start",
-    "build": "env-cmd -f ./.env.production craco build",
-    "test": "env-cmd -f ./.env.development craco test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
