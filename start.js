@@ -1,28 +1,24 @@
-const { exec } = require("child_process");
+const {exec} = require("child_process");
+
 
 argv = require('yargs')
-    .command('$0 [name]', 'start the server',(yargs) => {
+    .usage('Usage: $0 <command> [options]')
+    .command('appName', 'start the server', (yargs) => {
         yargs
             .positional('name', {
-                describe: 'name to display',
-                default: 'world'
+                describe: 'Application name to display',
+                // default: 'appName',
+                type: 'string'
             })
-
-    }, (argv) => {
-        console.log(`Hello ${argv.name}!`)
     })
-    .command('[walkingValue]', 'set a config walking value',(yargs) => {
+    .command('walkingValue', 'set a config walking value', (yargs) => {
         yargs
-            .positional('walkingValue', {
+            .positional('name', {
                 describe: 'step size as the walking value in Random Walk technique',
-                default: 10
+                // default: 10,
+                type: 'double'
             })
-
-    }, (argv) => {
-        console.log(`Walking Value is ${argv.walkingValue}`)
     })
-
     .argv
 
-
-exec("set \"REACT_APP_USR_NAME=" + argv.name +"\" && set \"REACT_APP_WALKING_STEP=" + argv.walkingValue +"\" && npm start\n")
+exec("set \"REACT_APP_USR_NAME=" + argv.appName +"\" && set \"REACT_APP_WALKING_STEP=" + argv.walkingValue +"\" && npm start\n")
